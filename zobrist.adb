@@ -3,9 +3,9 @@ with Ada.Numerics.Discrete_Random;
 with Interfaces; use Interfaces;
 
 package body Zobrist is
-   -- Random number generator for 64-bit values
-   package Random_64 is new Ada.Numerics.Discrete_Random (Unsigned_64);
-   use Random_64;
+   -- Random number generator for Hash_Value type
+   package Random_Hash is new Ada.Numerics.Discrete_Random (Hash_Value);
+   use Random_Hash;
 
    procedure Initialize_Table (Table : out Table_Type) is
       G : Generator;
